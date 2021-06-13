@@ -1,30 +1,51 @@
-import React, { useState } from 'react';
-import style from './CalendarBody.module.sass';
-import Month from './Month';
-import { format, addMonths, subMonths } from 'date-fns';
+import React, { useState } from 'react'
+import style from './CalendarBody.module.sass'
+import {
+  format,
+  addMonths,
+  subMonths,
+  eachWeekOfInterval,
+  startOfMonth,
+  endOfMonth
+} from 'date-fns'
+import Week from './Week'
+import CalendarHeader from './CalendarHeader'
+import CalendarControls from './CalendarControls'
 
- function CalendarBody () {
-  const currentDate = new Date();
-  const monthName = currentDate.toLocaleString('en-US', { month: 'long' });
-  const currentYear = currentDate.getFullYear();
-  // const [currentDate, setCurrentDate] = useState(new Date());
-  // const monthName = format(currentDate, 'EEEE')
-  // const currentYear = format(currentDate, 'yyyy')
+function CalendarBody () {
+  const [currentDate, setCurrentDate] = useState(new Date())
+  const weeksInMonthArray = eachWeekOfInterval({
+    start: startOfMonth(currentDate),
+    end: endOfMonth(currentDate)
+  })
+  const weeks = weeksInMonthArray.map(weekStartDate => (
+    <Week
+      startDate={weekStartDate}
+      currentDate={currentDate}
+      key={weekStartDate.toLocaleDateString()}
+    />
+  ))
+  const monthName = format(currentDate, 'EEEE')
+  const currentYear = format(currentDate, 'yyyy')
 
-  // const openPrevMonth = () =>
-  //   setCurrentDate(currentDate => subMonths(currentDate, 1));
+  const openPrevMonth = () =>
+    setCurrentDate(currentDate => subMonths(currentDate, 1))
 
-  // const openNextMonth = () =>
-  //   setCurrentDate(currentDate => addMonths(currentDate, 1)); 
+  const openNextMonth = () =>
+    setCurrentDate(currentDate => addMonths(currentDate, 1))
 
   return (
     <div className={style.calendarBodyWrapper}>
-      <div className={style.monthHeader}>
-        {monthName} {currentYear}
-      </div>
-      <Month />
+      <h3 className={style.monthHeader}>{format(currentDate, 'MMMM yyyy')}</h3>
+      <CalendarControls
+        openPrevMonth={openPrevMonth}
+        openNextMonth={openNextMonth}
+      />
+      <CalendarHeader />
+
+      {weeks}
     </div>
   )
 }
 
-export default CalendarBody;
+export default CalendarBody

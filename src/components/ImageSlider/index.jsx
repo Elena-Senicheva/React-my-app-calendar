@@ -19,6 +19,10 @@ const ImageSlider = ({ slides }) => {
     return null
   }
 
+  const moveDot = index => {
+    setCurrent(index)
+  }
+
   return (
     <section className={style.slider}>
       <FaArrowAltCircleLeft className={style.leftarrow} onClick={prevSlide} />
@@ -35,6 +39,14 @@ const ImageSlider = ({ slides }) => {
           </div>
         )
       })}
+      <div className={style.dots}>
+        {Array.from({ length: 5 }).map((item, index) => (
+          <div
+            onClick={() => moveDot(index + 1)}
+            className={current === index + 1 ? style.activedot : style.dot}
+          ></div>
+        ))}
+      </div>
     </section>
   )
 }

@@ -1,11 +1,18 @@
 import React from 'react'
-import Button from '../../../Button'
+import style from './CalendarControls.module.sass'
+import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa'
 
-export default function CalendarControls({openPrevMonth, openNextMonth}) {
+export default function CalendarControls ({ openPrevMonth, openNextMonth }) {
   return (
-    <div>
-      <Button onClick={openPrevMonth}>{'<'}</Button>
-      <Button onClick={openNextMonth}>{'>'}</Button>
+    <div className={style.arrow}>
+      <FaArrowAltCircleLeft
+        className={style.leftarrow}
+        onClick={openPrevMonth}
+      />
+      <FaArrowAltCircleRight
+        className={style.rightarrow}
+        onClick={openNextMonth}
+      />
     </div>
   )
 }

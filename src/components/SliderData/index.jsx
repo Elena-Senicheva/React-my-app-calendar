@@ -1,0 +1,22 @@
+export const SliderData = [
+  {
+    image:
+      'http://storge.pic2.me/w/560x350/785/60c4b51e6d9a50.44600616.webp'
+  },
+  {
+    image:
+      'http://storge.pic2.me/w/560x350/915/5286e051061a1.webp'
+  },
+  {
+    image:
+      'http://storge.pic2.me/w/560x350/279/54a4340e61b4a.webp'
+  },
+  {
+    image:
+      'http://storge.pic2.me/w/560x350/579/54a996b269621.webp'
+  },
+  {
+    image:
+      'http://storge.pic2.me/w/560x350/276/cq8r9z6t54su.webp'
+  }
+];

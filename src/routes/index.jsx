@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Calendar from '../components/Calendar'
+import ToDo from '../components/ToDo'
 import Home from '../components/Home'
 import ImageSlider from '../components/ImageSlider'
 import { SliderData } from '../components/SliderData'
@@ -11,6 +12,7 @@ function Routes () {
       <Route exact path='/' component={Home} />
       <Route path='/calendar' component={Calendar} />
       <Route path='/slider'> <ImageSlider slides={SliderData}/> </Route> 
+      <Route path='/todo' component={ToDo} />
       <Route path='*' component={NotFound} />
     </Switch>
   )

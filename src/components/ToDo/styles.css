@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+h1 {
+  font-family: cursive;
+  color: rgb(74, 228, 228);
+}
+
+.input-field label{
+  color:rgb(214, 245, 40);
+}

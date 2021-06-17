@@ -20,7 +20,7 @@ function TodoItem ({ title, id, completed }) {
         />
         <span>{title}</span>
 
-        <i className='material-icons red-text'>delete</i>
+        <i className='material-icons red-text' >delete</i>
       </label>
     </li>
   )

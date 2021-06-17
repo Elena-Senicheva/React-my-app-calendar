@@ -23,6 +23,14 @@ function ToDo () {
     }
   }
 
+   const removeTodo = id => {
+    setTodos(
+      todos.filter(todo => {
+        return todo.id !== id
+       })
+     )
+   }
+
   return (
     <div className='container'>
       <h1>Todo list</h1>

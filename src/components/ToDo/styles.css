@@ -13,5 +13,6 @@ h1 {
 }
 
 .input-field label{
-  color:rgb(214, 245, 40);
+  color:rgb(132, 173, 35);
+  font-weight:900;
 }

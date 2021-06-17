@@ -10,6 +10,7 @@ function Header () {
           <NavItem to='/'>Home</NavItem>
           <NavItem to='/calendar'>Calendar</NavItem>
           <NavItem to='/slider'>ImageSlider</NavItem>
+          <NavItem to='/todo'>Todo list</NavItem>
         </ul>
       </nav>
     </header>

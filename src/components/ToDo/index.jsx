@@ -4,9 +4,7 @@ import styles from './styles.css'
 import { v4 as uuidv4 } from 'uuid'
 
 function ToDo () {
-  const [todos, setTodos] = useState([
-    { id: 1, title: 'task1', completed: false }
-  ])
+  const [todos, setTodos] = useState([])
 
   const [todoTitle, setTodoTitle] = useState('')
 
